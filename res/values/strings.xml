@@ -11,7 +11,9 @@
     <string name="my_posts">My Posts</string>
     <string name="my_profile">My Profile</string>
     <string name="dummy_headline">New Story Heading</string>
+     <string name="dummy_profile">My profile</string>
     <string name="dummy_story_detail">ahofoqejoqijerqierjo jroqiejroiqejrpoiqjerpi qjeprihqpeirhqpeiurhpqoierhpoq ijerpoqijerpio qjpeorijqpoeirjpoq eij</string>
 	<string name="new_post">New Post</string>
-	<string name="cancel">Cancel</string>
+    <string name="cancel">Cancel</string>
+	
 </resources>

@@ -78,6 +78,7 @@
     </RelativeLayout>
     </ScrollView>
     
+    <!-- C -->
     <ImageView
         android:id="@+id/iv_img_cancel"
         android:layout_width="48dp"

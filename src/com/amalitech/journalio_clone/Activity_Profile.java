@@ -10,13 +10,11 @@ import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Activity_MainNewsPage extends Activity {
+public class Activity_Profile extends Activity {
 
 	TextView tab_0;
 	TextView tab_1;
 	TextView tab_2;
-	
-	Button bttn_base_0, bttn_base_1;
 	
 	Context ctx;
 	
@@ -25,32 +23,26 @@ public class Activity_MainNewsPage extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.main_news_page_layout);
+		setContentView(R.layout.activity_profile);
 		
 		//setting context to this class
-		ctx = Activity_MainNewsPage.this;
+		ctx = Activity_Profile.this;
 		
 		//Reference ui elements
 		tab_0 = (TextView )findViewById(R.id.nav_tv_0);
 		tab_1 = (TextView )findViewById(R.id.nav_tv_1);
 		tab_2 = (TextView )findViewById(R.id.nav_tv_2);
 		
-		bttn_base_0=(Button)findViewById(R.id.base_bttn_0);
+		//displaying view in this layout
+		nav_V(3, "nav_v_", 2).setVisibility(View.VISIBLE);
 		
-		bttn_base_1=(Button)findViewById(R.id.base_bttn_1);
-		
-		bttn_base_0.setText(getResources().getString(R.string.get_your_account_for_more_features));
-		
-		//setting view in this layout to visible
-		nav_V(3, "nav_v_", 0).setVisibility(View.VISIBLE);	
-		
-		//tab 1(My Post) event
-		tab_1.setOnTouchListener(new OnTouchListener() {
+		//tab 0(Trending or Main News Page) event
+		tab_0.setOnTouchListener(new OnTouchListener() {
 			
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				
-				if(v.getId()==tab_1.getId()) {
+				if(v.getId()==tab_0.getId()) {
 				switch (event.getActionMasked()){
 
   						case MotionEvent.ACTION_DOWN:
@@ -65,7 +57,7 @@ public class Activity_MainNewsPage extends Activity {
   							//change color to default
   							
   							//do the action
-  							Intent activity_Post_intent = new Intent(Activity_MainNewsPage.this, Activity_Poster.class );
+  							Intent activity_Post_intent = new Intent(Activity_Profile.this, Activity_MainNewsPage.class );
   							startActivity(activity_Post_intent);
   							
   							break;
@@ -82,13 +74,13 @@ public class Activity_MainNewsPage extends Activity {
 			}
 		});
 		
-		//tab 2(My Profile) event
-		tab_2.setOnTouchListener(new OnTouchListener() {
+		//tab 1(My posts) event
+		tab_1.setOnTouchListener(new OnTouchListener() {
 					
 					@Override
 					public boolean onTouch(View v, MotionEvent event) {
 						
-						if(v.getId()==tab_2.getId()) {
+						if(v.getId()==tab_1.getId()) {
 						switch (event.getActionMasked()){
 		
 		  						case MotionEvent.ACTION_DOWN:
@@ -103,7 +95,7 @@ public class Activity_MainNewsPage extends Activity {
 		  							//change color to default
 		  							
 		  							//do the action
-		  							Intent activity_Post_intent = new Intent(Activity_MainNewsPage.this, Activity_Profile.class );
+		  							Intent activity_Post_intent = new Intent(Activity_Profile.this, Activity_Poster.class );
 		  							startActivity(activity_Post_intent);
 		  							
 		  							break;
@@ -119,19 +111,7 @@ public class Activity_MainNewsPage extends Activity {
 						return true;
 					}
 				});
-		
-		/*for(int x=0; x<3; x++) {
-			
-			//because we are in the Activity_MainNewsPage,
-			//turn off all the views under the tv except 
-			//the first one.
-			/*if(x==0){//trending
-				nav_V(3, "nav_v_", x).setVisibility(View.VISIBLE);
-			}else{
-				nav_V(3, "nav_v_", x).setVisibility(View.GONE);
-			}*/
-			
-		
+
 		
 		
 	}
